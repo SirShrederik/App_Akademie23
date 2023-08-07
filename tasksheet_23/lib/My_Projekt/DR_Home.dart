@@ -33,6 +33,7 @@ class _DailyRoutineersHomeState extends State<DailyRoutineersHome> {
         title: const Text("Home") ,
         backgroundColor: const Color.fromARGB(145, 110, 23, 125),
       ),
+      
       drawer: Drawer(
         child: ListView(
           children: [
@@ -81,71 +82,83 @@ class _DailyRoutineersHomeState extends State<DailyRoutineersHome> {
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          children: [
-            const Text(
-              "How do you feel today?",
-              style: TextStyle(fontSize: 18),
-            ),
-
-    //         SliderTheme(
-    // data: SliderTheme.of(context).copyWith(
-    // activeTrackColor: Colors.white,
-    // thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
-    // overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0),
-    // ),
-    // child: Slider(
-    //          value: _sliderValue,
-    //          min: 120.0,
-    //          max: 220.0,
-    //          activeColor: Colors.white,
-    //          inactiveColor: Color(0xFF8D8E98),
-    //          onChanged: (double newValue) {
-    //              setState(() {
-    //                     _sliderValue = newValue.round() as double;
-    //                   });
-    //                 },
-    //               ),
-    //             ),
-          
-          
-            Slider(
-               
-              thumbColor: const Color.fromARGB(255, 72, 40, 51), 
-             activeColor: const Color.fromARGB(255, 72, 40, 51),
-              inactiveColor: Colors.lightGreen,
+      body: 
+      
+      Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.8), BlendMode.dstATop),
+            image: AssetImage("assets/images/sandclock.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            children: [
+              const Text(
+                "How do you feel today?",
+                style: TextStyle(fontSize: 18),
+              ),
               
-              value: _sliderValue,
-              min: 0,
-              max: 100,
-              onChanged: (value) {
-                setState(() {
-                  _sliderValue = value;
-                 
-                });
-              },
-            ),
-          
+              
+      
+          //         SliderTheme(
+          // data: SliderTheme.of(context).copyWith(
+          // activeTrackColor: Colors.white,
+          // thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
+          // overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0),
+          // ),
+          // child: Slider(
+          //          value: _sliderValue,
+          //          min: 120.0,
+          //          max: 220.0,
+          //          activeColor: Colors.white,
+          //          inactiveColor: Color(0xFF8D8E98),
+          //          onChanged: (double newValue) {
+          //              setState(() {
+          //                     _sliderValue = newValue.round() as double;
+          //                   });
+          //                 },
+          //               ),
+          //             ),
             
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                buildColumnWithIconAndText(Icons.menu, "Routines"),
-                buildColumnWithIconAndText(Icons.check_circle, "Actual Success"),
-              ],
-            ),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                buildColumnWithIconAndText(Icons.book, "Diary"),
-                buildColumnWithIconAndText(Icons.account_circle, "My Profil"),
-              ],
-            ),
-          ],
+            
+              Slider(
+                 
+                thumbColor: const Color.fromARGB(255, 72, 40, 51), 
+               activeColor: const Color.fromARGB(255, 72, 40, 51),
+                inactiveColor: Colors.lightGreen,
+                
+                value: _sliderValue,
+                min: 0,
+                max: 100,
+                onChanged: (value) {
+                  setState(() {
+                    _sliderValue = value;
+                   
+                  });
+                },
+              ),
+              Text('bla bla'),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  buildColumnWithIconAndText(Icons.menu, "Routines"),
+                  buildColumnWithIconAndText(Icons.check_circle, "Actual Success"),
+                ],
+              ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  buildColumnWithIconAndText(Icons.book, "Diary"),
+                  buildColumnWithIconAndText(Icons.account_circle, "My Profil"),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomAppBar(

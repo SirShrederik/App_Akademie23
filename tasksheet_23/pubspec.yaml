@@ -63,6 +63,7 @@ flutter:
     - assets/images/Mood.jpg
     - assets/images/man_nerves.jpg
     - assets/images/woman_nerves.jpg
+    - assets/images/sandclock.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
